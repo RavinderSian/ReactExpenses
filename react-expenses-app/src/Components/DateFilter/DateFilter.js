@@ -1,5 +1,7 @@
 import React from "react";
 import classes from "./DateFilter.module.css";
+import backArrow from "../../icons/backArrow.svg";
+import nextArrow from "../../icons/nextArrow.svg";
 
 const DateFilter = () => {
   return (
@@ -9,35 +11,33 @@ const DateFilter = () => {
           <a className={`${classes["anchor-arrow-back"]}`}>
             <img
               className={`${classes["date-traversal-arrow"]}`}
-              src="/images/icons/back-arrow.svg"
+              src={backArrow}
               alt="Back arrow for year"
             />
           </a>
-          <h3 class="year-text">2019</h3>
-          <a class="anchor-arrow-next" th:href="${'/budget/' + nextYear}">
+          <h3 className={`${classes["year-text"]}`}>2019</h3>
+          <a className={`${classes["anchor-arrow-next"]}`}>
             <img
-              class="date-traversal-arrow"
-              src="/images/icons/next-arrow.svg"
+              className={`${classes["date-traversal-arrow"]}`}
+              src={nextArrow}
               alt="Forward arrow for year"
             />
           </a>
         </div>
       </div>
-      <div class="flex-box-month">
-        <a class="anchor-arrow-back" href="#">
+      <div className={`${classes["flex-box-month"]}`}>
+        <a className={`${classes["anchor-arrow-back"]}`} href="#">
           <img
             id="month-arrow-back"
-            src="/images/icons/back-arrow.svg"
+            src={backArrow}
             alt="Back arrow for year"
           />
         </a>
-        <h4 class="month-text" th:text="${currentMonth}">
-          January
-        </h4>
-        <a class="anchor-arrow-next" th:href="${'/budget/' + nextYear}">
+        <h4 class="month-text">January</h4>
+        <a className={`${classes["anchor-arrow-next"]}`}>
           <img
             id="month-arrow-next"
-            src="/images/icons/next-arrow.svg"
+            src={nextArrow}
             alt="Forward arrow for year"
           />
         </a>

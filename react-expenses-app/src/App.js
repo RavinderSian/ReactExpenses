@@ -1,11 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavigationHeader from "./Components/NavigationHeader/NavigationHeader";
+import DateFilter from "./Components/DateFilter/DateFilter";
 
 function App() {
   return (
     <div className="App">
       <NavigationHeader />
+      <DateFilter />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
