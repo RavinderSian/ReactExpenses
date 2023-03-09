@@ -1,28 +1,18 @@
+import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import NavigationHeader from "./Components/NavigationHeader/NavigationHeader";
 import DateFilter from "./Components/DateFilter/DateFilter";
+import AppBody from "./Components/AppBody/AppBody";
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
       <NavigationHeader />
-      <DateFilter />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <AppBody>
+        <DateFilter />
+      </AppBody>
+    </React.Fragment>
   );
 }
 

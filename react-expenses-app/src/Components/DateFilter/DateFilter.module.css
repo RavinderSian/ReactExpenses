@@ -1,70 +1,4 @@
 @charset "ISO-8859-1";
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:400");
-
-* {
-  font-family: "Work Sans, sans-serif";
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 87.5%;
-} /*14px*/
-
-body {
-  background: white;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.75;
-  color: #000000;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-h2,
-h3,
-h4,
-h5 {
-  margin: 3rem 0 1.38rem;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.3;
-}
-
-h1 {
-  margin: 0;
-  line-height: 0.75;
-  font-size: 3.052rem;
-}
-
-h2 {
-  font-size: 2.441rem;
-}
-
-h3 {
-  font-size: 1.953rem;
-}
-
-h4 {
-  font-size: 1.563rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-small,
-.text_small {
-  font-size: 0.8rem;
-}
-
-body {
-  background-color: #96f2d7;
-  overflow: auto;
-}
 
 .hidden {
   display: none;
@@ -82,10 +16,6 @@ body {
   margin-bottom: 20px;
 }
 
-.login-input {
-  border-radius: 10px;
-}
-
 .body-app {
   display: grid;
   grid-gap: 20px;
@@ -93,42 +23,151 @@ body {
   grid-template-rows: 1fr 3fr;
 }
 
-.register-box {
-  border: 5px solid red;
-  width: 50%;
-  height: 250px;
-  background-color: orange;
-  position: absolute;
-  top: 100px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.hidden {
+  display: none;
 }
 
-.register-form {
+.hidden-opacity-collapse {
+  opacity: 0;
+  height: 0;
+}
+
+.add-expense-form {
+  display: grid;
+  justify-items: center;
+  border: 2px solid blue;
+}
+
+.expense-input {
+  display: block;
+  border-radius: 10px;
+}
+
+.budget-list-header {
+  justify-content: space-evenly;
+  padding-left: 10px;
+  margin-left: 40px;
+  display: grid;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background-color: #8ce99a;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.budget-list {
+  margin-left: 40px;
+  padding-left: 5px;
+  display: grid;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background-color: #8ce99a;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.budget-list-total {
+  margin-left: 40px;
+  padding-left: 5px;
+  display: grid;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background-color: #8ce99a;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-items: center;
+}
+
+.total {
+  margin: 10px;
+}
+
+.budget-list-edit-form {
+  margin-left: 40px;
+  height: 80px;
+  padding-left: 5px;
   display: grid;
   align-items: center;
-  justify-content: space-evenly;
-  grid-auto-rows: 50px;
-}
-
-.btn-register {
+  border: 2px solid blue;
   border-radius: 10px;
-  background-color: #69db7c;
-}
-
-.btn-register:hover {
   background-color: #8ce99a;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
 }
 
-.btn-register:active {
-  transform: scale(0.98);
-  /* Scaling button to 0.98 to its original size */
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
+.edit-expense-input {
+  width: 75%;
+  height: 50%;
+  border-radius: 10px;
 }
 
-.error {
-  font-weight: bold;
-  color: red;
+.delete-expense-link {
+  pointer-events: none;
+}
+
+.delete-expense-btn {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.edit-expense-btn {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.category-header {
+  margin-bottom: 0;
+}
+
+.budget-date-filter {
+  margin-left: 40px;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background-color: #8ce99a;
+  margin-bottom: 10px;
+}
+
+.sorting-arrows {
+  width: min-content;
+}
+
+.sorting-arrows:hover {
+  cursor: pointer;
+}
+
+.year-grid {
+  display: grid;
+  justify-content: center;
+}
+
+.flex-box-month {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.month-text {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  flex-basis: 130px;
+}
+
+.flex-box-year {
+  display: flex;
+}
+
+.anchor-arrow-back {
+  width: 50px;
+}
+
+.year-text {
+  margin: 10px;
+}
+
+.anchor-arrow-next {
+  width: 50px;
+}
+
+.anchor-arrow-back {
+  width: 50px;
 }
