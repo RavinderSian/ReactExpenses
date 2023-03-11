@@ -33,7 +33,7 @@ const DateFilter = () => {
             alt="Back arrow for year"
           />
         </a>
-        <h4 class="month-text">January</h4>
+        <h4 className={`${classes["month-text"]}`}>January</h4>
         <a className={`${classes["anchor-arrow-next"]}`}>
           <img
             id="month-arrow-next"
