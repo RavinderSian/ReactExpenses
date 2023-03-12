@@ -7,15 +7,15 @@ const NavigationHeader = () => {
       <h1>Budget Application</h1>
       <button className={`${classes["btn-register"]}`}>Register</button>
       <form name="loginForm" action="/performlogin" method="POST">
-        <div class="login-inputs">
+        <div className={`${classes["login-inputs"]}`}>
           <input
-            class="login-input"
+            className={`${classes["login-input"]}`}
             type="text"
             name="username"
             placeholder="Username"
           ></input>
           <input
-            class="login-input"
+            className={`${classes["login-input"]}`}
             type="password"
             name="password"
             placeholder="Password"
@@ -23,7 +23,11 @@ const NavigationHeader = () => {
           <input name="submit-login" type="submit" value="submit" />
         </div>
       </form>
-      <input class="search-bar" type="search" placeholder="search"></input>
+      <input
+        className={`${classes["search-bar"]}`}
+        type="search"
+        placeholder="search"
+      ></input>
     </nav>
   );
 };
