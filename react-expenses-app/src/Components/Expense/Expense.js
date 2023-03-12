@@ -6,7 +6,7 @@ const Expense = (props) => {
     <div className={classes["budget-list"]}>
       <p>{props.purchaseDate}</p>
       <p>{props.category}</p>
-      <p>{props.amount.toFixed(2)}</p>
+      <p>{`'&pound' ${props.amount.toFixed(2)}`}</p>
       <p>{props.description}</p>
       <a className={classes["edit-expense-link"]}>
         <button className={classes["edit-expense-btn"]}>Edit</button>
