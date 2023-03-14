@@ -4,6 +4,11 @@ import classes from "./Expense.module.css";
 
 const Expense = (props) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [isHiding, setIsHiding] = useState(false);
+
+  const toggleHideHandler = () => {
+    setIsHiding((isHiding) => !isHiding);
+  };
 
   const toggleEditHandler = () => {
     setIsEditing((isEditing) => !isEditing);
@@ -11,7 +16,9 @@ const Expense = (props) => {
 
   return (
     <React.Fragment>
-      <div className={classes["budget-list"]}>
+      <div
+        className={`${classes["budget-list"]} ${isHiding && classes["hide"]}`}
+      >
         <p>{props.purchaseDate}</p>
         <p>{props.category}</p>
         <p>{`${String.fromCharCode(163)}${props.amount.toFixed(2)}`}</p>
@@ -28,7 +35,11 @@ const Expense = (props) => {
           <button className={classes["delete-expense-btn"]}>Delete</button>
         </a>
         <div>
-          <input type="checkbox" id="ignore-expense-checkbox" />
+          <input
+            onChange={toggleHideHandler}
+            type="checkbox"
+            id="ignore-expense-checkbox"
+          />
         </div>
       </div>
       {isEditing && (

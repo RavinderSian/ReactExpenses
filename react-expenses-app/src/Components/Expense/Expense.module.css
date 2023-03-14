@@ -4,6 +4,10 @@
   display: none;
 }
 
+.hide {
+  opacity: 0.5;
+}
+
 .hidden-opacity-collapse {
   opacity: 0;
   height: 0;
