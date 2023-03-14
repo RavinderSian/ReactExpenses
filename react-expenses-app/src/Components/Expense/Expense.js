@@ -1,23 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import EditExpenseForm from "./EditExpenseForm";
 import classes from "./Expense.module.css";
 
 const Expense = (props) => {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const toggleEditHandler = () => {
+    setIsEditing((isEditing) => !isEditing);
+  };
+
   return (
-    <div className={classes["budget-list"]}>
-      <p>{props.purchaseDate}</p>
-      <p>{props.category}</p>
-      <p>{`${String.fromCharCode(163)}${props.amount.toFixed(2)}`}</p>
-      <p>{props.description}</p>
-      <a className={classes["edit-expense-link"]}>
-        <button className={classes["edit-expense-btn"]}>Edit</button>
-      </a>
-      <a className={classes["delete-expense-link"]} href="/delete/expense.id">
-        <button className={classes["delete-expense-btn"]}>Delete</button>
-      </a>
-      <div>
-        <input type="checkbox" id="ignore-expense-checkbox" />
+    <React.Fragment>
+      <div className={classes["budget-list"]}>
+        <p>{props.purchaseDate}</p>
+        <p>{props.category}</p>
+        <p>{`${String.fromCharCode(163)}${props.amount.toFixed(2)}`}</p>
+        <p>{props.description}</p>
+        <a className={classes["edit-expense-link"]}>
+          <button
+            onClick={toggleEditHandler}
+            className={classes["edit-expense-btn"]}
+          >
+            Edit
+          </button>
+        </a>
+        <a className={classes["delete-expense-link"]} href="/delete/expense.id">
+          <button className={classes["delete-expense-btn"]}>Delete</button>
+        </a>
+        <div>
+          <input type="checkbox" id="ignore-expense-checkbox" />
+        </div>
       </div>
-    </div>
+      {isEditing && (
+        <EditExpenseForm key={props.id} {...props.expense}></EditExpenseForm>
+      )}
+    </React.Fragment>
   );
 };
 
