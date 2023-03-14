@@ -6,6 +6,7 @@ import AppBody from "./Components/AppBody/AppBody";
 import ExpenseHeaders from "./Components/Expense/ExpenseHeaders";
 import ExpenseList from "./Components/Expense/ExpenseList";
 import ExpenseTotal from "./Components/Expense/ExpenseTotal";
+import AddExpenseForm from "./Components/Expense/AddExpenseForm";
 
 function App() {
   return (
@@ -15,7 +16,6 @@ function App() {
         <DateFilter />
         <ExpenseHeaders></ExpenseHeaders>
         <ExpenseList></ExpenseList>
-        <ExpenseTotal></ExpenseTotal>
       </AppBody>
     </React.Fragment>
   );

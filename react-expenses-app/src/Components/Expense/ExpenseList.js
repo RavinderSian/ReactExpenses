@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Expense from "./Expense";
+import ExpenseTotal from "./ExpenseTotal";
 import classes from "./ExpenseList.module.css";
 
 const DUMMY_EXPENSE = [
@@ -20,10 +21,19 @@ const DUMMY_EXPENSE = [
 ];
 
 const ExpenseList = () => {
+  const totalOfExpenses = DUMMY_EXPENSE.reduce((a, b) => {
+    return a + b.amount;
+  }, 0);
+
   const expensesList = DUMMY_EXPENSE.map((expense) => (
     <Expense key={expense.id} {...expense}></Expense>
   ));
-  return <React.Fragment>{expensesList}</React.Fragment>;
+  return (
+    <React.Fragment>
+      {expensesList}
+      <ExpenseTotal total={totalOfExpenses}></ExpenseTotal>
+    </React.Fragment>
+  );
 };
 
 export default ExpenseList;
